@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Socials</title>
+    <title>Drake News</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to My Socials</h1>
-    <ul>
-        <li><a href="https://twitter.com/your_twitter">Twitter</a></li>
-        <li><a href="https://instagram.com/your_instagram">Instagram</a></li>
-        <!-- Add more social links as needed -->
-    </ul>
+    <div id="entry-page" class="overlay">
+        <h1>ARE YOU DRAKE?</h1>
+        <button id="yes-button">Yes</button>
+        <button id="no-button">No</button>
+    </div>
+    <div id="main-page" class="content hidden">
+        <h1>Latest News About Drake</h1>
+        <div id="news-container"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
