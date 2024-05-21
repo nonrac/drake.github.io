@@ -1,11 +1,12 @@
 document.getElementById('yes-button').addEventListener('click', function() {
+    document.documentElement.requestFullscreen();
+    disableKeys();
     window.location.href = 'https://www.imdb.com/name/nm1013044/';
 });
 
 document.getElementById('no-button').addEventListener('click', function() {
     document.getElementById('entry-page').classList.add('hidden');
-    document.getElementById('main-page').classList.remove('hidden');
-    fetchNews();
+    document.getElementById('no-page').classList.remove('hidden');
 });
 
 function fetchNews() {
@@ -31,3 +32,20 @@ function fetchNews() {
             console.error('Error fetching news:', error);
         });
 }
+
+function disableKeys() {
+    document.addEventListener('keydown', function(event) {
+        const forbiddenKeys = ['F11', 'F12', 'Escape'];
+        if (forbiddenKeys.includes(event.key) || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+            event.preventDefault();
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        }
+    });
+});
