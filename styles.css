@@ -23,7 +23,7 @@ body {
     color: white;
 }
 
-.entry-content {
+.entry-content, .no-content {
     text-align: center;
     padding: 20px;
     background: rgba(0, 0, 0, 0.8);
@@ -98,5 +98,44 @@ button:hover {
 }
 
 .article a:hover {
+    color: #1ed760;
+}
+
+.bubble-text {
+    margin-top: 20px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.bubble-text::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(-50%);
+}
+
+.related-image {
+    margin-top: 20px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.no-content a {
+    display: block;
+    margin-top: 20px;
+    color: #1db954;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.no-content a:hover {
     color: #1ed760;
 }
